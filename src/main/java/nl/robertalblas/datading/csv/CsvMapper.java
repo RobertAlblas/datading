@@ -53,7 +53,7 @@ public class CsvMapper {
 
         Set<Programme> programmes = programmeService.getProgrammes();
         programmes.forEach(programme -> {
-            System.out.println(String.format("Programme %s, cooking: %b, unclear: %b", programme.getName(), programme.isCooking(), programme.isUnclear()));
+            System.out.println(String.format("%s, cooking: %d", programme.getName(), programme.isCooking() ? 1 : programme.isUnclear() ? 99 : 0));
         });
         System.out.println("Amount of programmes loaded: " + programmes.size());
         System.out.println("Amount of respondents loaded: " + respondentService.count());
